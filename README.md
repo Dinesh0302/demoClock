@@ -1,23 +1,3 @@
-
-Conversation opened. 1 unread message.
-
-
-Skip to content
-Using Gmail with screen readers
-Enable desktop notifications for Gmail.
-   OK  No, thanks
-1 of 8,953
-(no subject)
-Inbox
-
-Dinesh Suvarna
-Attachments
-22:57 (3 minutes ago)
-to Dinesh
-
-
-One attachment
-  • Scanned by Gmail
 # demoClock
 # Speaking Clock
 
@@ -52,5 +32,3 @@ Open a web browser and go to [http://localhost:8080]
 ## Authors
 - Dinesh Suvarna
 - dineshsuvarna0302@gmail.com
-access.txt
-Displaying access.txt.
