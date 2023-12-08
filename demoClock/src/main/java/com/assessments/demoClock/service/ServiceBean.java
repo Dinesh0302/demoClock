@@ -35,19 +35,25 @@ public class ServiceBean {
             String[] timeParts = time.split(":");
             int hours = Integer.parseInt(timeParts[0]);
             int minutes = Integer.parseInt(timeParts[1]);
+            System.out.println("this is " + hours);
+            System.out.println("this is M  " + minutes);
 
-//            if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
-//                return "Invalid time";
-//            }
-
-            if (hours == 0 && minutes == 0) {
+            if (hours < 0 || hours > 23 || minutes < 0 || minutes > 59) {
+                System.out.println("this is 1" + minutes);
+                return "Invalid time";
+            }
+           // midday starts at 12am to 11.59AM
+            if (hours >= 0 && hours <= 11 & minutes >= 0 && minutes <= 59) {
+                return "It's Midday";
+            }
+            // midnuight starts at 12pm to 11:59 PM
+            else if (hours >= 12 && hours <= 23 & minutes >= 0 && minutes <= 59) {
                 return "It's Midnight";
             }
-//            else if (hours == 12 && minutes == 0) {
-//                return "It's Midday";
-//            }
             else {
-                return "It's Midday";
+                System.out.println("this is 2" + minutes);
+                return "Invalid Time";
+
             }
         } catch (RuntimeException e) {
             return e.getMessage();
