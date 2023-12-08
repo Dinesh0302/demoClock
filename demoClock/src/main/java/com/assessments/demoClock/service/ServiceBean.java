@@ -91,23 +91,6 @@ public class ServiceBean {
         }
     }
 
-    private String convertToMiddayOrMidnight(String time) {
-        try {
-            String[] timeParts = time.split(":");
-            int hours = Integer.parseInt(timeParts[0]);
-
-            if (hours == 0 || hours == 12) {
-                return "It's Midnight";
-            } else if (hours == 12) {
-                return "It's Midday";
-            } else {
-                return "Invalid time";
-            }
-        } catch (NumberFormatException e) {
-            return "Invalid time";
-        }
-    }
-
 
     private String convertNumberToWords(int number) {
         // Basic implementation to convert numbers to words
