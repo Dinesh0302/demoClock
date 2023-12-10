@@ -70,13 +70,13 @@ public class ServiceBean {
         }
     }
 
-    private String getCurrentTime() {
+    public String getCurrentTime() {
         Calendar calendar = Calendar.getInstance();
         Date currentTime = calendar.getTime();
         return timeFormat.format(currentTime);
     }
 
-    private String convertTimeToWords(String time) {
+    public String convertTimeToWords(String time) {
         try {
             String[] timeParts = time.split(":");
             int hours = Integer.parseInt(timeParts[0]);

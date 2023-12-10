@@ -27,7 +27,7 @@ public class ClockController {
     }
 
     @GetMapping("/givenTime")
-    @Operation(summary = "Convert the given time to words", description = "Returns the time in words for the given time")
+    @Operation(summary = "Convert the given time to Midday or Midnight", description = "Returns the time in words for the given time")
     public ResponseEntity<String> convertGivenTimeToWords(@RequestParam String time) {
         try {
             String result = serviceBean.convertGivenTimeToMiddayOrMidnight(time);

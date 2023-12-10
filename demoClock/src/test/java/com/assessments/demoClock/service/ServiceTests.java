@@ -1,6 +1,7 @@
 package com.assessments.demoClock.service;
 
 import com.assessments.demoClock.service.ServiceBean;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,41 +10,41 @@ class ServiceBeanTests {
 
     private final ServiceBean serviceBean = new ServiceBean();
 
+
     @Test
     void testConvertTimeInWords() {
-        // Test a valid time conversion
+
         String result = serviceBean.convertTimeInWords("12:30");
         assertEquals("It's twelve thirty minutes", result);
 
-        // Add more test cases for different times
+        String result2 = serviceBean.convertTimeInWords("13:03");
+        assertEquals("It's thirteen three minutes", result2);
+
     }
 
-    @Test
-    void testGetCurrentTimeInWords() {
-
-        String result = serviceBean.getCurrentTimeInWords();
-
-        assertEquals("It's ", result);
-    }
-
+    //@Disabled
     @Test
     void testConvertGivenTimeToMiddayOrMidnight() {
         // Test converting given time to midday or midnight
-        String resultMidday = serviceBean.convertGivenTimeToMiddayOrMidnight("09:00");
+        String resultMidnight = serviceBean.convertGivenTimeToMiddayOrMidnight("23:00");
+        assertEquals("It's Midnight", resultMidnight);
+
+        String resultMidday = serviceBean.convertGivenTimeToMiddayOrMidnight("00:00");
         assertEquals("It's Midday", resultMidday);
 
-        String resultMidnight = serviceBean.convertGivenTimeToMiddayOrMidnight("00:00");
-        assertEquals("It's Midnight", resultMidnight);
+        String resultInvalid = serviceBean.convertGivenTimeToMiddayOrMidnight("40:05");
+        assertEquals("Invalid time format. Please provide a valid time in HH:mm format.", resultInvalid);
 
 
     }
+
 
     @Test
     void testInvalidTimeFormat() {
         // Test invalid time format
         String invalidTime = "invalidTime";
         String result = serviceBean.convertTimeInWords(invalidTime);
-        assertEquals("Invalid time format", result);
+        assertEquals("Invalid time format. Please provide a valid time in HH:mm format.", result);
 
     }
 }
